@@ -1,0 +1,8 @@
+package com.gestao.gestaocliente.domain.servico;
+
+public record DadosAlterarServico(
+		String placa ,
+		String dataserv ,
+		String servico1) {
+
+}

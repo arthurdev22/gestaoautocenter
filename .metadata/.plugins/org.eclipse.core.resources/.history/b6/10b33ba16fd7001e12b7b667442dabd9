@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Cadastro de Serviços</title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		<h1>Cadastro de Serviços</h1>
+		
+		
+		<form method="post" action="/servico">
+			<label>Placa do veiculo </label>
+			<input id="placa" name="placa">
+			
+			<label>data do cadastro </label>
+			<input id="dataserv" name="dataserv">
+			
+			
+			
+			<div class="input-group" input id="servico1">
+  <span class="input-group-text" id="servico1">Serviço</span>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+
+			<button class="btn btn-success" type="submit">Cadastrar Serviço</button>
+		</form>
+
+	</div>
+</body>
+
+</html>

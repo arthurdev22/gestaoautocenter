@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Listagem de Serviços </title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		<h1>Lista de Serviços</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Placa do Veiculo</th>
+					<th>Data do Serviço</th>
+					<th>Serviço1</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="servico : ${servlistagem}">
+					<td th:text="${servico.placa}"></td>
+					<td th:text="${servico.dataserv}"></td>
+					<td th:text="${servico.servico1}"></td>
+					
+					<td >
+						<form>
+								<button class="btn btn-danger btn-sm" type="submit" value="Excluir">Excluir</button>
+		</form>
+						</form>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+package com.gestao.gestaocliente.domain.cliente;
+
+public record DadosAlterarCliente(String nome,Float telefone) {
+
+}

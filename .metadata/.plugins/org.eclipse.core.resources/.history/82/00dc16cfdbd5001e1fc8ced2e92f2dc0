@@ -1,0 +1,5 @@
+package com.gestao.gestaocliente.domain.servico;
+
+public class Servico {
+
+}

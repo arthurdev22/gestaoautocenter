@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.gestao.gestaocliente.domain.veiculo.Veiculorepository.java&apos; to &apos;VeiculoRepository.java&apos;&#x0D;&#x0A;- Original project: &apos;gestaocliente&apos;&#x0D;&#x0A;- Original element: &apos;com.gestao.gestaocliente.domain.veiculo.Veiculorepository.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.gestao.gestaocliente.domain.veiculo.VeiculoRepository.java&apos;" description="Rename compilation unit &apos;Veiculorepository.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.gestao.gestaocliente.domain.veiculo{Veiculorepository.java" name="VeiculoRepository.java" references="false" stamp="1709425310348" version="1.0"/>
+</session>

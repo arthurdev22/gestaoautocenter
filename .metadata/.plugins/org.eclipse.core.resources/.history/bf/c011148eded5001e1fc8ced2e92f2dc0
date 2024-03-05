@@ -1,0 +1,7 @@
+package com.gestao.gestaocliente.domain.servico;
+
+public interface ServicoRepository {
+
+	Object getReferenceById(Long id);
+
+}

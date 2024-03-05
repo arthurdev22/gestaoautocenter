@@ -1,0 +1,9 @@
+package com.gestao.gestaocliente.domain.servico;
+
+public class Servico {
+
+	public Servico(DadosCadastrarServico dados) {
+		
+	}
+
+}

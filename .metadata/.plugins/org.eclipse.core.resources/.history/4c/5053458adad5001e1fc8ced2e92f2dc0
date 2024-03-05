@@ -1,0 +1,5 @@
+package com.gestao.gestaocliente.domain.cliente;
+
+public interface ServicoRepository {
+
+}

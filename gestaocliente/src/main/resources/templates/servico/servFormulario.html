@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Cadastro de Serviços</title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		<div class="container">
+		<h1>Cadastro de Serviços</h1>
+		
+		
+		<form method="post" action="/servico">
+			 <input type="hidden" name="_method" value="put" th:if="${servico != null}">
+            <input type="hidden" name="id" th:value="${servico?.id}">
+			
+			<label>Placa do veiculo </label>
+			<input id="placa" name="placa" th:value="${servico?.placa}">
+			
+			<label>data do cadastro </label>
+			<input type="date" id="dataserv" name="dataserv" th:value="${servico?.dataserv}">
+			<br>
+			<label>Serviço</label>
+			<input type="text" class="form-control"  id="servico1" name="servico1" th:value="${servico?.servico1}">
+			
+			
+
+			<button class="btn btn-success" type="submit">Cadastrar Serviço</button>
+		</form>
+		</div>
+
+	</div>
+</body>
+
+</html>

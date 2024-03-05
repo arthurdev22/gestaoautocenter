@@ -1,0 +1,105 @@
+package com.gestao.gestaocliente.domain.servico;
+
+import java.sql.Date;
+
+import org.thymeleaf.context.Context;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table (name="tblservico")
+public class Servico {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String placa;
+	private String dataserv;
+	private String servico1;
+	private String servico2;
+	private String servico3;
+	private String servico4;
+	
+	public Servico(DadosCadastrarServico dados) {
+		this.placa =dados.placa();
+		this.dataserv = dados.dataserv();
+		this.servico1 =dados.servico1();
+		this.servico1 =dados.servico2();
+		this.servico1 =dados.servico3();
+		this.servico1 =dados.servico4();
+	}
+	
+	public Servico () {}
+
+	@Override
+	public String toString() {
+		return "Servico[placa=" + placa + ", dataserv=" + dataserv +","
+				+ " servico1="+ servico1 +","
+						+ "servico2="+ servico2 +","
+								+ " servico3="+ servico3 +","
+										+ " servico4="+ servico4 +"]";
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getPlaca() {
+		return placa;
+	}
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	public String getDataserv() {
+		return dataserv;
+	}
+
+	public void setDataserv(String dataserv) {
+		this.dataserv = dataserv;
+	}
+
+	public String getServico1() {
+		return servico1;
+	}
+
+	public void setServico1(String servico1) {
+		this.servico1 = servico1;
+	}
+
+	public String getServico2() {
+		return servico2;
+	}
+
+	public void setServico2(String servico2) {
+		this.servico2 = servico2;
+	}
+
+	public String getServico3() {
+		return servico3;
+	}
+
+	public void setServico3(String servico3) {
+		this.servico3 = servico3;
+	}
+
+	public String getServico4() {
+		return servico4;
+	}
+
+	public void setServico4(String servico4) {
+		this.servico4 = servico4;
+	}
+	
+
+
+}

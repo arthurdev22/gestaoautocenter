@@ -1,0 +1,26 @@
+package com.gestao.gestaocliente.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.gestao.gestaocliente.domain.veiculo.VeiculoRepository;
+
+@Controller
+@RequestMapping
+public class VeiculoController {
+	
+	@Autowired
+	private VeiculoRepository repository;
+	
+	@GetMapping ("cadastrar")
+	public String carregaPaginaFormulario(Long id ,Model model) {
+		if (id != null) {
+			var veiculo = repository.getReferenceById(id);
+			model.addAttribute("veiculo" , veiculo);
+		}
+		return "veiculo/veiculoformulario";
+	}
+
+}

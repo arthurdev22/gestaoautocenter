@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Listagem de Serviços </title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		<h1>Lista de Serviços</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Placa do Veiculo</th>
+					<th>Data do Serviço</th>
+					<th>Serviço</th>
+					<th>Serviço</th>
+					<th>Serviço</th>
+					<th>Serviço</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="servico : ${servlistagem}">
+					<td th:text="${servico.placa}"></td>
+					<td th:text="${servico.dataserv}"></td>
+					<td th:text="${servico1.servico1}"></td>
+					<td th:text="${servico2.servico2}"></td>
+					<td th:text="${servico3.servico3}"></td>
+					<td th:text="${servico4.servico4}"></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+package com.gestao.gestaocliente.domain.veiculo;
+
+public class Veiculo {
+
+}

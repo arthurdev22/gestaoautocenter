@@ -1,0 +1,33 @@
+package com.gestao.gestaocliente.domain.servico;
+
+import java.sql.Date;
+
+import org.thymeleaf.context.Context;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table (name="tblservico")
+public class Servico {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String placa;
+	private Date dataserv;
+	private String servico1;
+	private String servico2;
+	private String servico3;
+	private String servico4;
+	
+	public Servico(DadosCadastrarServico dados) {
+		
+	}
+	
+
+
+}

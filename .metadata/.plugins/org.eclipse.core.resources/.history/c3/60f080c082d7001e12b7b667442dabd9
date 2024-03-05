@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Listagem de Serviços </title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		<h1>Lista de Serviços</h1>
+		<a  href="/servico/servFormulario"class="btn btn-primary ">Novo Serviço</button>
+		<table>
+			<thead>
+				<tr>
+					<th>Placa do Veiculo</th>
+					<th>Data do Serviço</th>
+					<th>Serviço1</th>
+					<th>Ações</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="servico : ${listaservico}">
+					<td th:text="${servico.placa}"></td>
+					<td th:text="${servico.dataserv}"></td>
+					<td th:text="${servico.servico1}"></td>
+					
+					<td >
+						<a th:href="@{/servico/servFormulario?id={id}(id=${servico.id})}" class="btn btn-warning btn-sm">Editar</a>
+						
+						<form action="/servico" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="hidden" name="id" th:value="${servico.id}">
+								<input class="btn btn-danger btn-sm" type="submit" 
+								value="Excluir"></input>
+		</form>
+						</form>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>

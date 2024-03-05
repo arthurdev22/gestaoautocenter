@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Listagem de Veiculos</title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		<div class="container">
+		
+		<h1>Lista de Veiculos</h1>
+		<a  href="/veiculos/cadastrar" class="btn btn-primary ">Novo Veiculo</a>
+		
+		<table>
+			<div class="rol">
+			<thead>
+				<tr>
+					<div class="col">
+					<th>Modelo</th>
+					</div>
+					<div class="col">
+					<th>Placa</th>
+					</div>
+					<div class="col">
+					<th>Ano do Modelo</th>
+					</div>
+					<div class="col">
+					<th>Proprietario</th>
+					</div>
+					<div class="col">
+					<th>Açoes</th>
+					</div>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="veiculos : ${listaveiculo}">
+					<td th:text="${veiculo.modelo_veiculo}"></td>
+					<td th:text="${veiculo.placa}"></td>
+					<td th:text="${veiculo.ano_veiculo}"></td>
+					<td th:text="${veiculo.proprietario}"></td>
+					
+					<td >
+						<td >
+							<a th:href="@{/veiculos/cadastrar?id={id}(id=${veiculo.id})}" class="btn btn-warning btn-sm">Editar</a>
+							
+						<form action="/veiculos" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="hidden" name="id" th:value="${veiculo.id}">
+								<button class="btn btn-danger btn-sm" type="submit" 
+								value="Excluir">Excluir</button>
+		</form>
+						</form>
+					</td>
+
+				</tr>
+			</tbody>
+			</div>
+		</table>
+		</div>
+	</div>
+</body>
+
+</html>

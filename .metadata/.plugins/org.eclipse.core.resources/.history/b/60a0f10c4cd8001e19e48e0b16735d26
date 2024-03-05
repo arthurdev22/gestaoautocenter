@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Cadastro de Clientes</title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		 <div class="container">
+		<h1>Cadastro de Clientes</h1>
+		
+		<form method="post" action="/cliente">
+			 <input type="hidden" name="_method" value="put" th:if="${cliente != null}">
+            <input type="hidden" name="id" th:value="${cliente?.id}">
+		
+		
+		<div class="row">
+			 
+            <div class="col">
+              <label>Nome: </label>
+              <input class="form-control" id="nome" name="nome" th:value="${filme?.nome}"/>
+            </div>
+            
+            <div class="col">
+              <label>Telefone para Contato </label> 
+              <input type="number" class="form-control" id="telefone" name="telefone" th:value="${cliente?.telefone}"/>
+            </div>
+          </div>
+
+			<button class="btn btn-success" type="submit">Cadastrar Cliente</button>
+		</form>
+		 </div>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+package com.gestao.gestaocliente.domain.servico;
+
+import java.sql.Date;
+
+public record DadosCadastrarServico(
+		String placa ,
+		Date dataserv ,
+		String servico1 ,
+		String servico2 ,
+		String servico3 ,
+		String servico4) 
+
+{
+
+}

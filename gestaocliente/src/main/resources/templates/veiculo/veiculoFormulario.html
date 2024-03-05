@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Cadastro de Veiculos </title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		 <div class="container">
+		<h1>Cadastro de Veiculos</h1>
+		
+		<form method="post" action="/veiculos">
+			 <input type="hidden" name="_method" value="put" th:if="${veiculo != null}">
+            <input type="hidden" name="id" th:value="${veiculo?.id}">
+		
+		
+		<div class="row">
+			 
+            <div class="col">
+              <label>Modelo do Veiculo </label>
+              <input class="form-control" id="modelo_veiculo" name="modelo_veiculo" th:value="${veiculo?.modelo_veiculo}"/>
+            </div>
+            
+            <div class="col">
+              <label>Placa </label>
+              <input class="form-control" id="placa" name="placa" th:value="${veiculo?.placa}"/>
+            </div>
+            
+            <div class="col">
+              <label>Ano do Veiculo </label> 
+              <input type="number" class="form-control" id="ano_veiculo" name="ano_veiculo" th:value="${veiculo?.ano_veiculo}"/>
+            </div>
+          </div>
+          
+           <div class="col">
+              <label>Nome do Proprietario </label>
+              <input class="form-control" id="proprietario" name="proprietario" th:value="${veiculo?.proprietario}"/>
+            </div>
+
+			<button class="btn btn-success" type="submit">Cadastrar Veiculo</button>
+		</form>
+		 </div>
+
+	</div>
+</body>
+
+</html>

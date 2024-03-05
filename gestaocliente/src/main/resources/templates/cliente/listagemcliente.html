@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http//www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template.html}">
+
+<head>
+
+	<title>Listagem de Clientes </title>
+	
+</head>
+
+<body>
+	<div layout:fragment="conteudo">
+		<div class="container">
+		
+		<h1>Lista de Clientes</h1>
+		<a  href="/cliente/cadastrar" class="btn btn-primary ">Novo Cliente</a>
+		
+		<table>
+			<div class="rol">
+			<thead>
+				<tr>
+					<div class="col">
+					<th>Nome</th>
+					</div>
+					<div class="col">
+					<th>Telefone</th>
+					</div>
+					<div class="col"></div>
+					<div class="col">
+					<th>Açoes</th>
+					</div>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cliente : ${listacliente}">
+					<td th:text="${cliente.nome}"></td>
+					<td th:text="${cliente.telefone}"></td>
+					<td >
+						<td >
+							<a th:href="@{/cliente/cadastrar?id={id}(id=${cliente.id})}" class="btn btn-warning btn-sm">Editar</a>
+							
+						<form action="/cliente" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="hidden" name="id" th:value="${cliente.id}">
+								<button class="btn btn-danger btn-sm" type="submit" 
+								value="Excluir">Excluir</button>
+		</form>
+						</form>
+					</td>
+
+				</tr>
+			</tbody>
+			</div>
+		</table>
+		</div>
+	</div>
+</body>
+
+</html>
